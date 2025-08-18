@@ -12,26 +12,30 @@
     ?>
     <h2>Formulário para cadastro de livro</h2>
     <div class="container">
-        <form>
+        <form action="inserir.php" method="POST">
         <div class="mb-3">
-            <input placeholder="Digite o genero do livro" type="text" class="form-control">
+            <input placeholder="Digite o título do livro" type="text" name="titulo" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <input placeholder="Digite o genero do livro" type="text" name="genero" class="form-control">
         </div>
        
         <div class="mb-3">
-            <input placeholder="Digite o autor do livro" type="text" class="form-control">
+            <input placeholder="Digite o autor do livro" type="text" name="autor" class="form-control">
         </div>
        
         <div class="mb-3">
-            <input placeholder="Digite o ano do livro" type="text" class="form-control">
+            <input placeholder="Digite o ano do livro" type="text" name="ano" class="form-control">
         </div>
         
         <div class="mb-3">
-            <input placeholder="Digite a quantidade de páginas do livro" type="text" class="form-control">
+            <input placeholder="Digite a quantidade de páginas do livro" type="text" name="paginas" class="form-control">
         </div>
        
         <button type="submit" class="btn btn-primary">CADASTRAR LIVRO</button>
         </form>
-        <a class="btn btn-danger"href="index.php" type="button" class="btn btn-primary">Voltar</button>
+        <a class="btn btn-danger"href="index.php" type="button" class="btn btn-primary">Voltar</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
