@@ -36,25 +36,32 @@
         echo "Paginas: " . $livros['paginas'] . "<br><br>";
     }
     ?>
+
         <form action="inserir.php" method="POST">
         <div class="mb-3">
-            <input placeholder="#" type="text" name="titulo" class="form-control">
+            <input type="text" value=
+            "
+            <?php
+                echo $livros['titulo'];
+            ?>
+            "
+             name="titulo" class="form-control">
         </div>
 
         <div class="mb-3">
-            <input placeholder="#" type="text" name="genero" class="form-control">
+            <input type="text" name="genero" class="form-control">
         </div>
        
         <div class="mb-3">
-            <input placeholder="#" type="text" name="autor" class="form-control">
+            <input type="text" name="autor" class="form-control">
         </div>
        
         <div class="mb-3">
-            <input placeholder="#" type="text" name="ano" class="form-control">
+            <input type="text" name="ano" class="form-control">
         </div>
         
         <div class="mb-3">
-            <input placeholder="#" type="text" name="paginas" class="form-control">
+            <input type="text" name="paginas" class="form-control">
         </div>
        
         <button type="submit" class="btn btn-primary">ATUALIZAR</button>
