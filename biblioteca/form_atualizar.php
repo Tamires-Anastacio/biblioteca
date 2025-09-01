@@ -9,7 +9,6 @@
 <body>
     <?php
         include_once 'pedaco.php';
-
         $id = $_GET['id'];
 
         //echo "Valor do ID:" . $id;
@@ -21,50 +20,48 @@
     <h2>Formulário para atualização de livro</h2>
 
     <div class="container">
-        <form action="#" method = POST></form>
+        <form action="atualizar.php?id=<?php ECHO $id; ?>" method = POST>
 
     <?php
-    
+
+    require 'conexao.php';
     $sql = "SELECT * FROM livros WHERE id = $id";
     $stmt = $pdo->query($sql);
-    while ($livros = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $livros = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        echo "Título: " . $livros['titulo'] . "<br>";
-        echo "Genero: " . $livros['genero'] . "<br>";
-        echo "Autor: " . $livros['autor'] . "<br>";
-        echo "Ano: " . $livros['ano'] . "<br>";
-        echo "Paginas: " . $livros['paginas'] . "<br><br>";
-    }
+    // while ($livros = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+
+    //     echo "Título: " . $livros['titulo'] . "<br>";
+    //     echo "Genero: " . $livros['genero'] . "<br>";
+    //     echo "Autor: " . $livros['autor'] . "<br>";
+    //     echo "Ano: " . $livros['ano'] . "<br>";
+    //     echo "Paginas: " . $livros['paginas'] . "<br><br>";
+    // }
     ?>
 
         <form action="inserir.php" method="POST">
         <div class="mb-3">
-            <input type="text" value=
-            "
-            <?php
-                echo $livros['titulo'];
-            ?>
-            "
-             name="titulo" class="form-control">
+            Título: <input type="text" name="novo_titulo" value="<?php echo $livros['titulo'];?>" class="form-control">
         </div>
 
         <div class="mb-3">
-            <input type="text" name="genero" class="form-control">
+            Genero: <input type="text" name="novo_genero" value="<?php echo $livros['genero'];?>" class="form-control">
         </div>
        
         <div class="mb-3">
-            <input type="text" name="autor" class="form-control">
+            Autor: <input type="text" name="novo_autor" value="<?php echo $livros['autor'];?>" class="form-control">
         </div>
        
         <div class="mb-3">
-            <input type="text" name="ano" class="form-control">
+            Ano: <input type="text" name="novo_ano" value="<?php echo $livros['ano'];?>" class="form-control">
         </div>
         
         <div class="mb-3">
-            <input type="text" name="paginas" class="form-control">
+            Páginas: <input type="text" name="novo_paginas" value="<?php echo $livros['paginas'];?>" class="form-control">
         </div>
        
-        <button type="submit" class="btn btn-primary">ATUALIZAR</button>
+        <button type="submit" class="btn btn-primary">ATUALIZAR LIVRO</button>
         </form>
         <a class="btn btn-danger"href="index.php" type="button" class="btn btn-primary">Voltar</a>
     </div>
